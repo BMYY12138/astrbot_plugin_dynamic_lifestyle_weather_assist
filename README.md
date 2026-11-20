@@ -1,0 +1,2 @@
+# astrbot_plugin_dynamic_lifestyle_weather_assist
+动态生活天气助手
