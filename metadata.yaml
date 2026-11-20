@@ -1,0 +1,31 @@
+name: astrbot_plugin_dynamic_lifestyle_weather_assist
+display_name: 动态生活天气助手
+short_desc: 每天定时获取真实天气，写入动态生活状态插件的「每日日程」。
+desc: |
+  为 astrbot_plugin_dynamic_life_state 提供的辅助插件。按配置的城市或经纬度，
+  每天定时从 Open-Meteo 获取真实天气，转换成插件需要的 8 个自然时段，写入
+  AstrBot「扩展功能 → 每日日程」的天气面板和当天状态。
+
+  默认在每天 23:30 预取明天的天气，这样动态生活状态插件 00:00 生成日程时
+  会直接使用真实天气；也支持启动时补齐今天/明天、手动刷新、聊天内修改位置，
+  以及可选的“按新天气重排今日日程”。
+
+  不需要天气 API Key。
+version: v1.0.0
+author: fish
+repo: https://github.com/fish/astrbot_plugin_dynamic_lifestyle_weather_assist
+astrbot_version: ">=4.29.0,<5"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - telegram
+  - wecom
+  - wecom_ai_bot
+  - lark
+  - dingtalk
+  - discord
+  - slack
+  - kook
+  - satori
+  - webchat

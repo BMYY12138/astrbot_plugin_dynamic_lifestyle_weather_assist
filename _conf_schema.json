@@ -1,0 +1,94 @@
+{
+    "location": {
+        "type": "string",
+        "description": "📍 地理位置",
+        "hint": "城市名（如 北京、上海、杭州）或坐标（如 39.9042,116.4074）。留空且未填写经纬度时不会自动同步。",
+        "default": "北京"
+    },
+    "latitude": {
+        "type": "float",
+        "description": "纬度（可选）",
+        "hint": "和经度一起填写可跳过城市地理编码，直接使用坐标。填 0 表示不启用。",
+        "default": 0
+    },
+    "longitude": {
+        "type": "float",
+        "description": "经度（可选）",
+        "hint": "和纬度一起填写可跳过城市地理编码，直接使用坐标。填 0 表示不启用。",
+        "default": 0
+    },
+    "country_code": {
+        "type": "string",
+        "description": "国家/地区代码",
+        "hint": "两位代码，例如 CN。填写后会优先选择该国家/地区的地理编码结果；留空表示不限制。",
+        "default": "CN"
+    },
+    "update_time": {
+        "type": "string",
+        "description": "⏰ 每日同步时间",
+        "hint": "24 小时制 HH:MM。默认 23:30，早于动态生活状态插件 00:00 的每日日程生成，这样第二天 00:00 生成日程时就能直接使用真实天气。",
+        "default": "23:30"
+    },
+    "target": {
+        "type": "string",
+        "description": "🎯 同步目标",
+        "hint": "建议选择「只同步明天」：晚上预取明天的天气。若把同步时间改到早上，也可以选择今天或今天和明天。",
+        "options": [
+            "tomorrow",
+            "today",
+            "both"
+        ],
+        "labels": [
+            "只同步明天（推荐）",
+            "只同步今天",
+            "今天和明天"
+        ],
+        "default": "tomorrow"
+    },
+    "sync_on_start": {
+        "type": "bool",
+        "description": "🚀 启动时立即同步",
+        "hint": "AstrBot 启动或插件重载后，立即拉取今天和明天的天气并写入每日日程。只更新天气，不会自动重排已有日程。",
+        "default": true
+    },
+    "regenerate_today": {
+        "type": "bool",
+        "description": "🔁 同步今天后重排日程",
+        "hint": "默认关闭。开启后，定时/手动同步更新今天天气时会调用动态生活状态插件重新生成今日日程，使日程与真实天气一致；会消耗 LLM token。启动同步不会触发重排。",
+        "default": false
+    },
+    "timezone": {
+        "type": "string",
+        "description": "🕓 时区",
+        "hint": "调度和日期计算使用的 IANA 时区，默认 Asia/Shanghai。动态生活状态插件固定使用该时区，通常不需要修改。",
+        "default": "Asia/Shanghai"
+    },
+    "request_timeout": {
+        "type": "int",
+        "description": "🌐 网络超时（秒）",
+        "hint": "单次地理编码或天气请求的超时时间。",
+        "default": 20,
+        "slider": {
+            "min": 5,
+            "max": 60,
+            "step": 1
+        }
+    },
+    "retry_count": {
+        "type": "int",
+        "description": "🔂 天气请求重试次数",
+        "hint": "天气接口失败时的最大尝试次数（含第一次）。",
+        "default": 3,
+        "slider": {
+            "min": 1,
+            "max": 5,
+            "step": 1
+        }
+    },
+    "debug_mode": {
+        "type": "bool",
+        "description": "🐛 调试模式",
+        "hint": "输出更多日志，便于排查位置解析、天气映射和写入问题。",
+        "default": false
+    }
+}
