@@ -13,7 +13,7 @@ desc: |
   不需要天气 API Key。
 version: v1.0.0
 author: BMYY12138
-repo: https://github.com/fish/astrbot_plugin_dynamic_lifestyle_weather_assist
+repo: https://github.com/BMYY12138/astrbot_plugin_dynamic_lifestyle_weather_assist
 astrbot_version: ">=4.29.0,<5"
 support_platforms:
   - aiocqhttp
