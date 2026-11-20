@@ -63,7 +63,7 @@
 
 ### 方式一：面板安装（推荐）
 
-1. 从 [Releases](https://github.com/fish/astrbot_plugin_dynamic_lifestyle_weather_assist/releases)
+1. 从 [Releases](https://github.com/BMYY12138/astrbot_plugin_dynamic_lifestyle_weather_assist/releases)
    下载 `astrbot_plugin_dynamic_lifestyle_weather_assist.zip`。
 2. 打开 AstrBot 面板 → **插件** → **从文件安装**，选择 zip。
 3. 安装完成后，在插件列表找到「动态生活天气助手」，打开配置，确认城市和同步时间。
